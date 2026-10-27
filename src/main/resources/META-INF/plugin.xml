@@ -1,0 +1,29 @@
+<idea-plugin>
+    <id>com.example.helloplugin</id>
+    <name>Hello World Inserter</name>
+    <version>1.0.0</version>
+
+    <vendor>
+        Гольдин Даниил Кириллович, группа М3112
+    </vendor>
+
+    <description><![CDATA[
+        Плагин для CLion, добавляющий в меню <b>Tools</b> действие
+        «Insert Hello, World!». При вызове в позицию курсора активного
+        редактора вставляется строка <code>Hello, World!</code>.
+    ]]></description>
+
+    <idea-version since-build="243" until-build="243.*"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.clion</depends>
+
+    <actions>
+        <action id="HelloPlugin.InsertHello"
+                class="com.example.helloplugin.InsertHelloWorldAction"
+                text="Insert Hello, World!"
+                description="Вставляет строку Hello, World! в позицию курсора">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
