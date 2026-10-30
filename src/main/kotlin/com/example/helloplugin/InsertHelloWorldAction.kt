@@ -16,7 +16,12 @@ class InsertHelloWorldAction : AnAction() {
 
         WriteCommandAction.runWriteCommandAction(project) {
             val offset = editor.caretModel.offset
-            document.insertString(offset, "Hello, World!")
+            document.insertString(offset, "#include <iostream>\n" +
+                    "\n" +
+                    "int main() {\n" +
+                    "    std::cout << \"Hello World!\";\n" +
+                    "    return 0;\n" +
+                    "}")
         }
     }
 
